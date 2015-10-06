@@ -1,0 +1,45 @@
+﻿<Window x:Class="SendEMail.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:propers="clr-namespace:SendEMail.Properties"
+        Title="MainWindow" Height="335" Width="600" Closing="Window_Closing" Background="#FF444444" FontSize="24">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/Styles.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="10">Server</TextBlock>
+        <TextBox x:Name="tb_Server" Grid.Row="0" Grid.Column="1" Text="{Binding Source={x:Static propers:Settings.Default}, Path=smtpServer}" VerticalContentAlignment="Center">
+        </TextBox>
+        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="10">Port</TextBlock>
+        <TextBox x:Name="tb_Port"  Grid.Row="1" Grid.Column="1" Text="{Binding Source={x:Static propers:Settings.Default}, Path=smtpPort}" VerticalContentAlignment="Center">
+        </TextBox>
+        <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="10">Account</TextBlock>
+        <TextBox x:Name="tb_Account"  Grid.Row="2" Grid.Column="1" Text="{Binding Source={x:Static propers:Settings.Default}, Path=mailAccount}" VerticalContentAlignment="Center">
+        </TextBox>
+        <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="10">Password</TextBlock>
+        <PasswordBox x:Name="tb_Pwd"  Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center">
+        </PasswordBox>
+        <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Margin="10">Excel File</TextBlock>
+        <StackPanel  Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+            <Button Padding="10" Click="Button_Click_1">Choose File</Button>
+            <TextBlock x:Name="tb_ExcelFilePath" VerticalAlignment="Center" Margin="10,0,0,0"></TextBlock>
+        </StackPanel>
+        <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,10,10,10" Click="Button_Click_2">Send E-mail</Button>
+    </Grid>
+</Window>

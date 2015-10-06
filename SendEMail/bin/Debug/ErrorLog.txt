@@ -1,0 +1,7 @@
+2 Something wrong with Mail Adress : formyfarrari.gmail.com
+2 Sending Error!
+3 File not found : E:\下載\19034955861_f7a1b4db6d_o.jpg!
+4 Subject is null!
+5 Body is null!
+6 Subject is null!
+6 Body is null!

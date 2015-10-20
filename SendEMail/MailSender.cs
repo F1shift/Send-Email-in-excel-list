@@ -161,7 +161,7 @@ namespace SendEMail
                     if (ErrorOutput != null)
                         ErrorOutput(rowIndex + " Body is null!");
                 //附件
-                String[] Attachments = ((String)excelSheet.Cells[rowIndex, 7].Value2).Split(',', ';', '\n');
+                String[] Attachments = ((String)excelSheet.Cells[rowIndex, 7].Value2)?.Split(',', ';', '\n');
                 if (excelSheet.Cells[rowIndex, 7].Value2 != null)
                 {
                     //[] Attachments = ((String)excelSheet.Cells[rowIndex, 7].Value2).Split(',', ';', '\n');
